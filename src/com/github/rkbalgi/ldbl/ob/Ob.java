@@ -9,9 +9,11 @@ public class Ob {
 
 		ObRequestObj command = new ObRequestObj(header, data);
 		Inflights.add(command);
+		
 		//start time for timeouts
 		Utils.startTimer(command);
 		// write to hsm
+		
 		Outbounds.getInstance().sendOutbound(command.getData());
 		command.waitForResponse();
 		return (command.getResponseData());
