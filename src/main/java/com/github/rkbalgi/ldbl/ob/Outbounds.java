@@ -26,7 +26,7 @@ public class Outbounds {
 	private NioSocketConnector connector;
 	private List<ObConfig> configList = Properties.getObConfigs();
 
-	private Queue<IoSession> queue = new LinkedList<IoSession>();
+	private final Queue<IoSession> queue = new LinkedList<IoSession>();
 
 	private Outbounds() {
 
